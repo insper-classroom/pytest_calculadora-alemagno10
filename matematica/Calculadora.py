@@ -18,9 +18,13 @@ def multiplicacao(va: float, vb: float):
 def divisao(va: float, vb: float):
     ''' Função que retorna a divisão entre dois valores
     '''
-    return va / vb
+    if vb != 0:
+        return va / vb
+    else: return np.inf
 
 def media_lista_valores(v:list):
     ''' Função que retorna a média entre N valores
     '''
-    return np.mean(v)
+    
+    v_numeros = [x for x in v if isinstance(x,(int,float))]
+    return np.mean(v_numeros)
